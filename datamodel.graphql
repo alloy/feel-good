@@ -1,11 +1,21 @@
-type User {
-  id: ID! @unique
-  name: String!
+interface Node {
+  id: ID!
 }
 
-type Task {
+type User implements Node {
+  id: ID! @unique
+  name: String!
+  tasks: [Task!]!
+}
+
+type Task implements Node {
   id: ID! @unique
   description: String!
-  startedAt: DateTime
+  stints: [Stint!]!
+}
+
+type Stint implements Node {
+  id: ID! @unique
+  startedAt: DateTime!
   completedAt: DateTime
 }

@@ -25,6 +25,7 @@
     "cache-loader": "^1.2.2",
     "concurrently": "^4.0.1",
     "electron": "^2.0.8",
+    "fork-ts-checker-webpack-plugin": "^0.4.9",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.0.3",
     "webpack": "^4.17.2",

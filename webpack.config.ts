@@ -1,6 +1,7 @@
 import path from "path"
 import webpack from "webpack"
 import webpackDevServer from "webpack-dev-server"
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin"
 
 const config: webpack.Configuration & webpackDevServer.Configuration = {
   mode: "development",
@@ -46,6 +47,9 @@ const config: webpack.Configuration & webpackDevServer.Configuration = {
       },
     ],
   },
+  plugins: [
+    new ForkTsCheckerWebpackPlugin()
+  ],
 };
 
 export default config;

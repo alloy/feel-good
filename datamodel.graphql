@@ -1,0 +1,11 @@
+type User {
+  id: ID! @unique
+  name: String!
+}
+
+type Task {
+  id: ID! @unique
+  description: String!
+  startedAt: DateTime
+  completedAt: DateTime
+}

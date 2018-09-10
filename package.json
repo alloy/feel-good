@@ -26,6 +26,7 @@
     "concurrently": "^4.0.1",
     "electron": "^2.0.8",
     "fork-ts-checker-webpack-plugin": "^0.4.9",
+    "react-hot-loader": "^4.3.6",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.0.3",
     "webpack": "^4.17.2",

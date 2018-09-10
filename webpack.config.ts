@@ -5,7 +5,13 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin"
 
 const config: webpack.Configuration & webpackDevServer.Configuration = {
   mode: "development",
-  entry: "./src/index.tsx",
+  entry: [
+      "react-hot-loader/patch",
+    //   "webpack-dev-server/client?http://localhost:8080",
+    //   "webpack/hot/only-dev-server",
+    // 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true&__webpack_public_path=http://webpack:8080',
+      "./src/index.tsx"
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "app.bundle.js"
@@ -17,6 +23,7 @@ const config: webpack.Configuration & webpackDevServer.Configuration = {
       errors: true,
     },
     stats: "errors-only",
+    hot: true,
   },
   resolve: {
     extensions: [".mjs", ".js", ".jsx", ".ts", ".tsx"],
@@ -48,6 +55,7 @@ const config: webpack.Configuration & webpackDevServer.Configuration = {
     ],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin()
   ],
 };

@@ -1,0 +1,38 @@
+{
+  "name": "feel-done",
+  "version": "0.0.1",
+  "description": "Feel good time-tracking",
+  "repository": "https://github.com/alloy/feel-good.git",
+  "author": "Eloy Durán <eloy.de.enige@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently --raw --kill-others 'yarn webpack:dev' 'yarn electron:dev'",
+    "electron:dev": "electron -r ./babel-bootstrap .",
+    "webpack:dev": "webpack-dev-server -r babel-bootstrap"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@types/electron": "^1.6.10",
+    "@types/react": "^16.4.13",
+    "@types/react-dom": "^16.0.7",
+    "@types/webpack": "^4.4.11",
+    "@types/webpack-dev-server": "^3.1.0",
+    "babel-loader": "^8.0.2",
+    "cache-loader": "^1.2.2",
+    "concurrently": "^4.0.1",
+    "electron": "^2.0.8",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.0.3",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  }
+}
